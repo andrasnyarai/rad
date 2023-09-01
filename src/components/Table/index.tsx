@@ -68,7 +68,6 @@ export const Table = ({ exchanges, pageIndex }: Props) => {
           <HeaderTitle>24h volume / BTC</HeaderTitle>
           <HeaderTitle>Normalized</HeaderTitle>
           {exchanges.map((exchange) => {
-            console.log(exchange);
             return (
               <Fragment key={exchange.id}>
                 <div

@@ -29,7 +29,3 @@ const Home = async ({ params }: Props) => {
 };
 
 export default Home;
-
-// add msw tests
-// deploy
-// add readme
