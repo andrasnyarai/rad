@@ -1,23 +1,11 @@
 import { Table } from "@/components/Table";
-import { Exchange } from "@/lib/types";
-
-const getExchangesData = async (pageIndex: number): Promise<Exchange[]> => {
-  const res = await fetch(
-    `https://api.coingecko.com/api/v3/exchanges?per_page=15&page=${pageIndex}`
-  );
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
-
-  return res.json();
-};
+import { getExchangesData } from "@/lib/api";
 
 type Props = {
   params: { pageIndex: string };
 };
 
-const Home = async ({ params }: Props) => {
+const Exchanges = async ({ params }: Props) => {
   const pageIndex = Number(params.pageIndex) || 1;
   const exchanges = await getExchangesData(pageIndex);
 
@@ -28,4 +16,4 @@ const Home = async ({ params }: Props) => {
   );
 };
 
-export default Home;
+export default Exchanges;

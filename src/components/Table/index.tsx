@@ -98,12 +98,10 @@ export const Table = ({ exchanges, pageIndex }: Props) => {
         </TableBody>
       </Background>
       <Controls>
-        {Number(pageIndex) > 1 && (
-          <Link href={`/exchanges/${Number(pageIndex) - 1 || 1}`}>
-            previous
-          </Link>
+        {pageIndex > 1 && (
+          <Link href={`/exchanges/${pageIndex - 1 || 1}`}>previous</Link>
         )}
-        <Link href={`/exchanges/${Number(pageIndex) + 1 || 1}`}>next</Link>
+        <Link href={`/exchanges/${pageIndex + 1 || 1}`}>next</Link>
       </Controls>
     </Container>
   );
